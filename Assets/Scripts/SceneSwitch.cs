@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    [SerializeField] private int scene_number;
+    [SerializeField] private int sceneNumber;
+
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void OnMouseDown()
     {
-        SceneManager.LoadScene(scene_number);
+        SceneManager.LoadScene(sceneNumber);
     }
 }
