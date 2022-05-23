@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_Rigidbody;
     [SerializeField] private int Move_speed;
     public bool keyForLibrali = false;
-    public bool exitKey = false;
-
+    public bool exitKey = false; 
 
     private void Start()
     {
@@ -80,9 +79,20 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Move_speed;
+        Flip();
         m_Rigidbody.velocity = direction;
 
     
     }
-
+    void Flip()
+    {
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
 }
