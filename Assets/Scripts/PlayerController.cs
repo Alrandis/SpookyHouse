@@ -79,9 +79,20 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Move_speed;
+        Flip();
         m_Rigidbody.velocity = direction;
 
     
     }
-
+    void Flip()
+    {
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
 }
