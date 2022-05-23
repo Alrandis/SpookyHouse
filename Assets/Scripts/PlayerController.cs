@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_Rigidbody;
     [SerializeField] private int Move_speed;
     public bool keyForLibrali = false;
-    public bool exitKey = false;
-
+    public bool exitKey = false; 
 
     private void Start()
     {
