@@ -8,13 +8,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_Rigidbody;
     [SerializeField] private int Move_speed;
     public bool keyForLibrali = false;
-    public bool exitKey = false; 
+    public bool exitKey = false;
+    public Joystick joystick;
 
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(transform.parent.gameObject);
         
+
     }
     private void FixedUpdate()
     {
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
    
     private void Update()
     {
-        var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Move_speed;
+        var direction = new Vector2(joystick.Horizontal, joystick.Vertical) * Move_speed;
         Flip();
         m_Rigidbody.velocity = direction;
 
@@ -86,11 +88,11 @@ public class PlayerController : MonoBehaviour
     }
     void Flip()
     {
-        if (Input.GetAxis("Horizontal") < 0)
+        if (joystick.Horizontal < 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        if (Input.GetAxis("Horizontal") > 0)
+        if (joystick.Horizontal > 0)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }

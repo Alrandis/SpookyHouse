@@ -176,3 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Move_speed: 3
+  keyForLibrali: 0
+  exitKey: 0
+  joystick: {fileID: 0}
