@@ -8,6 +8,7 @@ public class SceneSwitch : MonoBehaviour
     [SerializeField] private int sceneNumber;
     [SerializeField] private PlayerController player;
     [SerializeField] private Vector2 playerPosition;
+    public Joystick joystick;
     private void Awake()
     {
         gameObject.SetActive(false);
@@ -17,5 +18,6 @@ public class SceneSwitch : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNumber);
         player.GetComponent<PlayerController>().transform.position = playerPosition;
+       
     }
 }
