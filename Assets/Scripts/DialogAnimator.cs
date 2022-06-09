@@ -8,6 +8,7 @@ public class DialogAnimator : MonoBehaviour
     public DialogManager dialogManager;
     private int value = 0;
 
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (value == 0)
@@ -16,6 +17,7 @@ public class DialogAnimator : MonoBehaviour
             {
                 dialogMenu.SetBool("StartDialog", true);
                 FindObjectOfType<DialogTriger>().TrigerDialog();
+                Time.timeScale = 0f;
                 value++;
             }
         }      

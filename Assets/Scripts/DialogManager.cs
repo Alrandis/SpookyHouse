@@ -9,6 +9,7 @@ public class DialogManager : MonoBehaviour
     public Text dialogText;
     public Animator dialogMenu;
 
+
     private Queue<string> sentences;
 
     private void Start()
@@ -53,5 +54,6 @@ public class DialogManager : MonoBehaviour
     public void EndDialog()
     {
         dialogMenu.SetBool("StartDialog", false);
+        Time.timeScale = 1f;
     }
 }
