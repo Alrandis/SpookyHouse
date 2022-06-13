@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public Text nameText;
     public Text dialogText;
     public Animator dialogMenu;
 
@@ -20,7 +19,6 @@ public class DialogManager : MonoBehaviour
     public void StartDialog(Dialog dialog)
     {
         dialogMenu.SetBool("StartDialog", true);
-        nameText.text = dialog.name;
         sentences.Clear();
         foreach(string sentece in dialog.sentences)
         {

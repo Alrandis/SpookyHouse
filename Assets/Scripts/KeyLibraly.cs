@@ -5,14 +5,16 @@ using UnityEngine;
 public class KeyLibraly : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
-    private void Awake()
+    private Transform parent;
+
+    private void Start()
     {
-        gameObject.SetActive(false);
+        parent = this.transform.parent;
     }
 
     private void OnMouseDown()
     { 
         player.GetComponent<PlayerController>().keyForLibrali = true;
-        gameObject.SetActive(false);
+        parent.gameObject.SetActive(false);
     }
 }

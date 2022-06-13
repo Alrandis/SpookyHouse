@@ -6,6 +6,11 @@ public class DialogTriger : MonoBehaviour
 {
     public Dialog dialog;
 
+    private void Awake()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     public void TrigerDialog()
     {
         FindObjectOfType<DialogManager>().StartDialog(dialog);

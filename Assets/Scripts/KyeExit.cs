@@ -5,14 +5,15 @@ using UnityEngine;
 public class KyeExit : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
-    private void Awake()
+    private Transform parent;
+    private void Start()
     {
-        gameObject.SetActive(false);
+        parent = this.transform.parent;
     }
 
     private void OnMouseDown()
     {
         player.GetComponent<PlayerController>().exitKey = true;
-        gameObject.SetActive(false);
+        parent.gameObject.SetActive(false);
     }
 }
