@@ -18,7 +18,7 @@ public class KeyChest : MonoBehaviour
     { 
         player.GetComponent<PlayerController>().keyForchest = true;
         parent.gameObject.SetActive(false);
-        dialogTriggerIfKey.SetActive(false);
-        dialogTriggerNotKey.SetActive(true);
+        dialogTriggerIfKey.SetActive(true);
+        dialogTriggerNotKey.SetActive(false);
     }
 }

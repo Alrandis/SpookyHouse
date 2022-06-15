@@ -10,18 +10,17 @@ public class PlayerController : MonoBehaviour
     public bool keyForchest = false;
     public bool exitKey = false;
     public Joystick joystick;
+   
+
 
     private void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(transform.parent.gameObject);
-        
-
+        m_Rigidbody = GetComponent<Rigidbody2D>();        
     }
 
-    public void PutInPoint(Vector2 playerPosition)
+    public void PutInPoint(Vector3 playerPosition)
     {
-        transform.localPosition = playerPosition;
+        transform.position = playerPosition;
     }
 
     //private void FixedUpdate()
