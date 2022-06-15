@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody;
     [SerializeField] private int Move_speed;
-    public bool keyForLibrali = false;
+    public bool keyForchest = false;
     public bool exitKey = false;
     public Joystick joystick;
 
