@@ -8,6 +8,9 @@ public class AtackZombie : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject target;
     [SerializeField] private float t;
+    public Animator dialogMenu;
+    //public DialogManager dialogManager;
+    public DialogTriger dialogTriger;
 
     private void OnMouseDown()
     { 
@@ -27,6 +30,11 @@ public class AtackZombie : MonoBehaviour
         }
         anim.SetBool("Damage", true);
         yield return new WaitForSeconds(3);
+
+        dialogMenu.SetBool("StartDialog", true);
+        dialogTriger.TrigerDialog();
+        Time.timeScale = 0f;
+
         Destroy(target.gameObject);
         Destroy(gameObject);
     }   
