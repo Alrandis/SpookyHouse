@@ -8,13 +8,15 @@ public class AtackZombie : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject target;
     [SerializeField] private float t;
-    public Animator dialogMenu;
-   
+    [SerializeField] private Animator dialogMenu;
+    [SerializeField] private AudioSource audioZombieDie;
+
     public DialogTriger dialogTriger;
 
     private void OnMouseDown()
     { 
         transform.position = player.transform.position;
+        audioZombieDie = GetComponent<AudioSource>();
         t = 0;
         StartCoroutine(Atack());
     }
@@ -28,6 +30,7 @@ public class AtackZombie : MonoBehaviour
             t += 0.01f;
             yield return null;
         }
+        audioZombieDie.Play();
         anim.SetBool("Damage", true);
         yield return new WaitForSeconds(3);
 

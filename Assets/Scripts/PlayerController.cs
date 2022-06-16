@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour
     public bool keyForchest = false;
     public bool exitKey = false;
     public Joystick joystick;
-    [SerializeField] private Text count;
-    [SerializeField] private int countKey = 0;
+    [SerializeField] private Text countKey;
+    [SerializeField] private Text countScroll;
+    [SerializeField] private int countKeys = 0;
+    [SerializeField] private int countScrolls = 0;
 
 
     private void Start()
@@ -26,8 +28,13 @@ public class PlayerController : MonoBehaviour
     }
     public void AddCountKey()
     {
-        countKey++;
-        count.text = $"{countKey}%";
+        countKeys++;
+        countKey.text = $"{countKeys}%";
+    }
+    public void AddCountScrolls()
+    {
+        countScrolls++;
+        countScroll.text = $"{countScrolls}%";
     }
 
     //private void FixedUpdate()

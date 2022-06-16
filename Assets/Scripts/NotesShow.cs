@@ -18,6 +18,7 @@ public class NotesShow : MonoBehaviour
         }
         noteMenu.SetBool("showNote", true);
         FindObjectOfType<NotesManager>().ShowNotes(imagesNote);
+        FindObjectOfType<PlayerController>().AddCountScrolls();
         Time.timeScale = 0f;
         transform.parent.gameObject.SetActive(false);
     }
