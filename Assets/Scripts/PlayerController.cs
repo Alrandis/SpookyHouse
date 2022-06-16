@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour
@@ -10,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public bool keyForchest = false;
     public bool exitKey = false;
     public Joystick joystick;
-   
+    [SerializeField] private Text count;
+    [SerializeField] private int countKey = 0;
 
 
     private void Start()
@@ -21,6 +23,11 @@ public class PlayerController : MonoBehaviour
     public void PutInPoint(Vector3 playerPosition)
     {
         transform.position = playerPosition;
+    }
+    public void AddCountKey()
+    {
+        countKey++;
+        count.text = $"{countKey}%";
     }
 
     //private void FixedUpdate()
@@ -95,7 +102,7 @@ public class PlayerController : MonoBehaviour
     //        }
     //    }
     //}
-   
+
     private void Update()
     {
         var direction = new Vector2(joystick.Horizontal, joystick.Vertical) * Move_speed;

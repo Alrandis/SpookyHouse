@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class KeyChest : MonoBehaviour
 {
+
     [SerializeField] private GameObject dialogTriggerIfKey;
     [SerializeField] private GameObject dialogTriggerNotKey;
     [SerializeField] private PlayerController player;
     private Transform parent;
+    [SerializeField] private GameObject chest;
 
     private void Start()
     {
@@ -20,5 +22,8 @@ public class KeyChest : MonoBehaviour
         parent.gameObject.SetActive(false);
         dialogTriggerIfKey.SetActive(true);
         dialogTriggerNotKey.SetActive(false);
+        chest.SetActive(true);
+        FindObjectOfType<PlayerController>().AddCountKey();
+
     }
 }

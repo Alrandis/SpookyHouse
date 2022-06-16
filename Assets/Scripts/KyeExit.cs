@@ -15,5 +15,6 @@ public class KyeExit : MonoBehaviour
     {
         player.GetComponent<PlayerController>().exitKey = true;
         parent.gameObject.SetActive(false);
+        FindObjectOfType<PlayerController>().AddCountKey();
     }
 }

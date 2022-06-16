@@ -38,7 +38,6 @@ public class GhostTrigger : MonoBehaviour
                     FindObjectOfType<NotesManager>().ShowNotes(notesShow.imagesNote);
                     Time.timeScale = 0f;
                 }
-
             }
 
             else
