@@ -5,11 +5,15 @@ using UnityEngine;
 public class GhostTrigger : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
-    private Transform childObj;
+    [SerializeField] private Transform childObj;
     [SerializeField] private GameObject curScene;
+    [SerializeField] private NotesShow notesShow;
+    public Animator dialogMenu;
+    public DialogTriger dialogTriger;
     private void Start()
     {
         childObj = this.transform.GetChild(0);
+        
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -18,17 +22,26 @@ public class GhostTrigger : MonoBehaviour
         {
            if (player.exitKey == true && player.keyForchest == true)
             {
-                if (curScene.activeSelf)
+                if (curScene.activeInHierarchy)
                 {
                     childObj.gameObject.SetActive(true);
+                    notesShow.imagesNote = notesShow.GetComponent<NotesShow>().imagesNote;
+
+                    dialogMenu.SetBool("StartDialog", true);
+                    dialogTriger.TrigerDialog();
+
+
+                    // запуск анимаци изчезания призрака
+
+
+                    notesShow.noteMenu.SetBool("showNote", true);
+                    FindObjectOfType<NotesManager>().ShowNotes(notesShow.imagesNote);
+                    Time.timeScale = 0f;
                 }
-               
-                // запуск анимаци изчезания призрака
-                // Запуск диалога
-                // Запуск чтения записок
+
             }
 
-           else
+            else
             {
                 childObj.gameObject.SetActive(false);
             }

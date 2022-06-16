@@ -9,7 +9,7 @@ public class AtackZombie : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private float t;
     public Animator dialogMenu;
-    //public DialogManager dialogManager;
+   
     public DialogTriger dialogTriger;
 
     private void OnMouseDown()

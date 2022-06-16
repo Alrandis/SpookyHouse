@@ -7,12 +7,13 @@ public class DialogAnimator : MonoBehaviour
     public Animator dialogMenu;
     public DialogManager dialogManager;
     public DialogTriger dialogTriger;
+    public Collider2D ghost;
     private int value = 0;
 
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (value == 0)
+        if (value == 0 && !ghost)
         {
             if (other.GetComponent<PlayerController>())
             {
