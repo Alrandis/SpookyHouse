@@ -8,7 +8,7 @@ public class MenuScript : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject gameMenu;
     [SerializeField] private GameObject house;
-    [SerializeField] private AudioSource menuMusic;
+    [SerializeField] private AudioSource backraundMusic;
 
     public void ExitGame()
     {
@@ -28,7 +28,7 @@ public class MenuScript : MonoBehaviour
 
     public void ContinueGame()
     {
-        //menuMusic.Play();
+        backraundMusic.Play();
         house.SetActive(true);
         gameMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -36,7 +36,7 @@ public class MenuScript : MonoBehaviour
     public void PauseGame()
     {
         house.SetActive(false);
-        //menuMusic.Stop();
+        backraundMusic.Stop();
         gameMenu.SetActive(true);
         Time.timeScale = 0f;
     }

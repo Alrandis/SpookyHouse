@@ -237,7 +237,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5030852}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -248,7 +248,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.77, y: 3.72}
+  m_Size: {x: 1.77, y: 2.7138295}
   m_EdgeRadius: 0
 --- !u!1 &5352206
 GameObject:
@@ -379,6 +379,8 @@ MonoBehaviour:
   exitGame: {fileID: 2047480817}
   player: {fileID: 1941249443}
   house: {fileID: 682788782}
+  backraundMusic: {fileID: 1941249446}
+  menuMusic: {fileID: 1933636188}
 --- !u!1 &18316184
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.38993073
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1916,7 +1918,7 @@ MonoBehaviour:
   t: 0
   dialogMenu: {fileID: 2048974944}
   audioZombieDie: {fileID: 398903594}
-  frontier: {fileID: 0}
+  frontier: {fileID: 200447000}
   dialogTriger: {fileID: 2048974940}
 --- !u!212 &398903592
 SpriteRenderer:
@@ -2593,7 +2595,7 @@ RectTransform:
   m_GameObject: {fileID: 470572361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7871462, y: 1.1531701, z: 1}
+  m_LocalScale: {x: 0.7287872, y: 1.4106244, z: 0.92586}
   m_Children: []
   m_Father: {fileID: 2047480818}
   m_RootOrder: 0
@@ -3665,6 +3667,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 375938407, guid: ef25596c5227bdb428ccbad2c9f98184, type: 3}
+      propertyPath: m_Text
+      value: "\u041C\u0430\u0441\u043B\u043E\u0432 \u0424\u0451\u0434\u043E\u0440
+        - \u0411\u0435\u0442\u0430 \u0442\u0435\u0441\u0442\u0435\u0440, \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0441\u0442
+        \u043F\u043E \u0440\u0430\u0431\u043E\u0442\u0435 \u0441 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u044C\u044E "
+      objectReference: {fileID: 0}
     - target: {fileID: 539671664, guid: ef25596c5227bdb428ccbad2c9f98184, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3683,6 +3691,10 @@ PrefabInstance:
       objectReference: {fileID: 682788782}
     - target: {fileID: 1933636187, guid: ef25596c5227bdb428ccbad2c9f98184, type: 3}
       propertyPath: menuMusic
+      value: 
+      objectReference: {fileID: 1941249446}
+    - target: {fileID: 1933636187, guid: ef25596c5227bdb428ccbad2c9f98184, type: 3}
+      propertyPath: backraundMusic
       value: 
       objectReference: {fileID: 1941249446}
     - target: {fileID: 2695475025395119637, guid: ef25596c5227bdb428ccbad2c9f98184, type: 3}
@@ -4903,7 +4915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.73
+      value: -10.21
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5169,7 +5181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1800613
+      value: -6.42
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7351,7 +7363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.730003
+      value: -10.26
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7618,7 +7630,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa6c3922c20699040839583473ea2b05, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.346
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8456,7 +8468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -71.99007
+      value: -71.43
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9438,7 +9450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7000656
+      value: -6.44
       objectReference: {fileID: 0}
     - target: {fileID: 9095095296121609349, guid: 15b0ab8d1d0088043a1dc2596d8bc95b, type: 3}
       propertyPath: m_LocalPosition.y
