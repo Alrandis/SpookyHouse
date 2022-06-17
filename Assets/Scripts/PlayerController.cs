@@ -15,11 +15,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Text countScroll;
     [SerializeField] private int countKeys = 0;
     [SerializeField] private int countScrolls = 0;
+    [SerializeField] private Animator anim;
 
 
     private void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody2D>();        
+        m_Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     public void PutInPoint(Vector3 playerPosition)
@@ -115,7 +116,14 @@ public class PlayerController : MonoBehaviour
         var direction = new Vector2(joystick.Horizontal, joystick.Vertical) * Move_speed;
         Flip();
         m_Rigidbody.velocity = direction;
-
+        if (joystick.Horizontal == 0 && joystick.Vertical == 0)
+        {
+            anim.SetBool("IsWalk", false);
+        }
+        else
+        {
+            anim.SetBool("IsWalk", true);
+        }
     
     }
     void Flip()
