@@ -8,6 +8,8 @@ public class GhostTrigger : MonoBehaviour
     [SerializeField] private Transform childObj;
     [SerializeField] private GameObject curScene;
     [SerializeField] private NotesShow notesShow;
+    
+    float currentValue = 1;
     public Animator dialogMenu;
     public DialogTriger dialogTriger;
     private void Start()
@@ -30,19 +32,31 @@ public class GhostTrigger : MonoBehaviour
                     dialogMenu.SetBool("StartDialog", true);
                     dialogTriger.TrigerDialog();
 
-
-                    // запуск анимаци изчезания призрака
+                  
+                    while (currentValue > 0)
+                    {
+                        childObj.gameObject.GetComponent<Renderer>().material.color = new Color(202, 202, 202, currentValue);
+                        currentValue -= Time.deltaTime;
+                    }
+                    
 
 
                     notesShow.noteMenu.SetBool("showNote", true);
                     FindObjectOfType<NotesManager>().ShowNotes(notesShow.imagesNote);
                     Time.timeScale = 0f;
+
+                    childObj.gameObject.SetActive(false);
                 }
+
             }
 
             else
             {
-                childObj.gameObject.SetActive(false);
+                while (currentValue > 0)
+                {
+                    childObj.gameObject.GetComponent<Renderer>().material.color = new Color(202, 202, 202, currentValue);
+                }
+                //childObj.gameObject.SetActive(false);
             }
         }
 
