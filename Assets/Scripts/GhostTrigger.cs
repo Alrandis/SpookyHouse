@@ -9,6 +9,7 @@ public class GhostTrigger : MonoBehaviour
     [SerializeField] private GameObject curScene;
     [SerializeField] private NotesShow notesShow;
     [SerializeField] private Animator anim;
+    [SerializeField] private GameObject exitFromHouse;
 
     public Animator dialogMenu;
     public DialogTriger dialogTriger;
@@ -38,6 +39,8 @@ public class GhostTrigger : MonoBehaviour
                     Time.timeScale = 0f;
 
                     anim.SetBool("disapoint", true);
+                    exitFromHouse.SetActive(true);
+
                     Destroy(gameObject, 5);
                 }
 

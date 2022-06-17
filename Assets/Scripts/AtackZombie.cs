@@ -10,6 +10,7 @@ public class AtackZombie : MonoBehaviour
     [SerializeField] private float t;
     [SerializeField] private Animator dialogMenu;
     [SerializeField] private AudioSource audioZombieDie;
+    [SerializeField] private GameObject frontier;
 
     public DialogTriger dialogTriger;
 
@@ -40,5 +41,6 @@ public class AtackZombie : MonoBehaviour
 
         Destroy(target.gameObject);
         Destroy(gameObject);
+        Destroy(frontier);
     }   
 }

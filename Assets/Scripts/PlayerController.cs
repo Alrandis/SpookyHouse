@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Text countKey;
     [SerializeField] private Text countScroll;
     [SerializeField] private int countKeys = 0;
-    [SerializeField] private int countScrolls = 0;
+    public int countScrolls = 0;
     [SerializeField] private Animator anim;
 
 

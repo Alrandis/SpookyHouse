@@ -28,7 +28,7 @@ public class MenuScript : MonoBehaviour
 
     public void ContinueGame()
     {
-        menuMusic.Play();
+        //menuMusic.Play();
         house.SetActive(true);
         gameMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -36,7 +36,7 @@ public class MenuScript : MonoBehaviour
     public void PauseGame()
     {
         house.SetActive(false);
-        menuMusic.Stop();
+        //menuMusic.Stop();
         gameMenu.SetActive(true);
         Time.timeScale = 0f;
     }
