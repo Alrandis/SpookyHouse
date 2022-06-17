@@ -41,7 +41,7 @@ public class GhostTrigger : MonoBehaviour
                     anim.SetBool("disapoint", true);
                     exitFromHouse.SetActive(true);
 
-                    Destroy(gameObject, 5);
+                    Destroy(gameObject, 3);
                 }
 
            }
