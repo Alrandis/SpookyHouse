@@ -4580,6 +4580,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &957950575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4107381465470167211, guid: 2f0992bdd8a065c4e9c8a313c4e11656, type: 3}
+  m_PrefabInstance: {fileID: 1206797649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &957950578
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957950575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd6b9ddda1c4bbe438411af771cd529e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &974966104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7151,6 +7175,7 @@ MonoBehaviour:
   countScroll: {fileID: 1813535920}
   countKeys: 0
   countScrolls: 0
+  anim: {fileID: 957950578}
 --- !u!61 &1941249444
 BoxCollider2D:
   m_ObjectHideFlags: 0
