@@ -44,6 +44,7 @@ public class NotesManager : MonoBehaviour
     public void CloseNote()
     {
         noteMenu.SetBool("showNote", false);
+        FindObjectOfType<PlayerController>().SetBoolShowNoteFalse();
         Time.timeScale = 1f;
     }
 }

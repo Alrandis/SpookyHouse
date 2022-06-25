@@ -17,6 +17,7 @@ public class NotesShow : MonoBehaviour
             ghost.GetComponent<NotesShow>().imagesNote.Add(this.realLangNote[0]);
         }
         noteMenu.SetBool("showNote", true);
+        FindObjectOfType<PlayerController>().SetBoolShowNoteTrue();
         FindObjectOfType<NotesManager>().ShowNotes(imagesNote);
         FindObjectOfType<PlayerController>().AddCountScrolls();
         Time.timeScale = 0f;

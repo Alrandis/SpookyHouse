@@ -28,7 +28,7 @@ public class AtackZombie : MonoBehaviour
         while (t < 1)
         {
             transform.position = Vector3.Lerp(player.transform.position, target.transform.position, t);
-            t += 0.01f;
+            t += 0.04f;
             yield return null;
         }
         audioZombieDie.Play();
@@ -36,6 +36,7 @@ public class AtackZombie : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         dialogMenu.SetBool("StartDialog", true);
+        FindObjectOfType<PlayerController>().SetBoolStartDialogTrue();
         dialogTriger.TrigerDialog();
         Time.timeScale = 0f;
 

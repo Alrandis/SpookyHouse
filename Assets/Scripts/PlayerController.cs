@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int countKeys = 0;
     public int countScrolls = 0;
     [SerializeField] private Animator anim;
+    [SerializeField] private bool startDialog;
+    [SerializeField] private bool showNote;
 
 
     private void Start()
@@ -111,9 +113,38 @@ public class PlayerController : MonoBehaviour
     //    }
     //}
 
+    public void SetBoolStartDialogTrue()
+    {
+        startDialog = true;
+    }
+    public void SetBoolStartDialogFalse()
+    {
+        startDialog = false;
+    }
+
+    public void SetBoolShowNoteTrue()
+    {
+        showNote = true;
+    }
+    public void SetBoolShowNoteFalse()
+    {
+        showNote = false;
+    }
+
     private void Update()
     {
-        var direction = new Vector2(joystick.Horizontal, joystick.Vertical) * Move_speed;
+        if (!startDialog && !showNote)
+        {
+            Move();
+        }
+        else
+        {
+            anim.SetBool("IsWalk", false);
+        }
+    }
+    private void Move()
+    {
+        var direction = new Vector2(joystick.Horizontal, joystick.Vertical).normalized * Move_speed;
         Flip();
         m_Rigidbody.velocity = direction;
         if (joystick.Horizontal == 0 && joystick.Vertical == 0)
@@ -124,9 +155,9 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("IsWalk", true);
         }
-    
     }
-    void Flip()
+
+    private void Flip()
     {
         if (joystick.Horizontal < 0)
         {

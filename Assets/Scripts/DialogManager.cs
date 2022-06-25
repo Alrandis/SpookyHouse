@@ -7,7 +7,7 @@ public class DialogManager : MonoBehaviour
 {
     public Text dialogText;
     public Animator dialogMenu;
-
+  
 
     private Queue<string> sentences;
 
@@ -52,6 +52,7 @@ public class DialogManager : MonoBehaviour
     public void EndDialog()
     {
         dialogMenu.SetBool("StartDialog", false);
+        FindObjectOfType<PlayerController>().SetBoolStartDialogFalse();
         Time.timeScale = 1f;
     }
 }

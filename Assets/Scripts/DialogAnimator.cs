@@ -17,6 +17,7 @@ public class DialogAnimator : MonoBehaviour
         {
             if (other.GetComponent<PlayerController>())
             {
+                FindObjectOfType<PlayerController>().SetBoolStartDialogTrue();
                 dialogMenu.SetBool("StartDialog", true);
                 dialogTriger.TrigerDialog();
                 Time.timeScale = 0f;
@@ -27,6 +28,7 @@ public class DialogAnimator : MonoBehaviour
     private void OnMouseDown()
     {
         dialogMenu.SetBool("StartDialog", true);
+        FindObjectOfType<PlayerController>().SetBoolStartDialogTrue();
         dialogTriger.TrigerDialog();
         Time.timeScale = 0f; 
     }

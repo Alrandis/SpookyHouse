@@ -30,8 +30,10 @@ public class GhostTrigger : MonoBehaviour
                     childObj.gameObject.SetActive(true);
                     notesShow.imagesNote = notesShow.GetComponent<NotesShow>().imagesNote;
 
+                    FindObjectOfType<PlayerController>().SetBoolStartDialogTrue();
                     dialogMenu.SetBool("StartDialog", true);
                     dialogTriger.TrigerDialog();
+                    Time.timeScale = 0f;
 
 
                     notesShow.noteMenu.SetBool("showNote", true);
@@ -39,9 +41,10 @@ public class GhostTrigger : MonoBehaviour
                     Time.timeScale = 0f;
 
                     anim.SetBool("disapoint", true);
+
                     exitFromHouse.SetActive(true);
 
-                    Destroy(gameObject, 3);
+                    Destroy(gameObject, 5);
                 }
 
            }
@@ -51,7 +54,7 @@ public class GhostTrigger : MonoBehaviour
                 if (!curScene.activeInHierarchy)
                 {
                     anim.SetBool("disapoint", true);
-                    Destroy(gameObject, 2);
+                    Destroy(gameObject, 5);
                 }
             }
         }
